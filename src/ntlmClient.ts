@@ -42,7 +42,7 @@ export function NtlmClient(credentials: NtlmCredentials, AxiosConfig?: AxiosRequ
 
         if (error && error.status === 401
             && error.headers['www-authenticate']
-            && error.headers['www-authenticate'].includes('Negotiate') 
+//             && error.headers['www-authenticate'].includes('Negotiate') //Navision sends only NTLM (Navision specific change)
             && error.headers['www-authenticate'].includes('NTLM')
             // This length check is a hack because SharePoint is awkward and will 
             // include the Negotiate option when responding with the T2 message
